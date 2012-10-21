@@ -1,0 +1,51 @@
+
+/*level 0 */
+resources{
+	color: #333;
+	
+}
+
+/*level 1 - resources*/
+name{
+	
+}
+
+url{
+}
+
+logo{
+}
+
+#container0 results{
+	color: #333;
+
+	/*margin-top: -12px;*/
+
+	font-weight:100;
+
+	font-size: 10pt;
+
+	margin-bottom: 15px;
+}
+
+/*level 2 - results */
+url{
+}
+
+#results a{
+	color: #0066ff;
+	text-decoration: none;
+}
+
+#results{
+	color: #333;
+	/*margin-top: -12px;*/
+	font-weight:100;
+	font-size: 10pt;
+	margin-bottom: 15px;
+}
+
+#results p img{
+	border-width: 1px;
+	border-color: #ccc;
+}
