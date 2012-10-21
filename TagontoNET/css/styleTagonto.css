@@ -1,0 +1,500 @@
+body {	font-family: Verdana, Arial, Helvetica, sans-serif;	background: #7b7b7b;}
+#pageWidth{	background: #fff;	width: 90%;	min-height: 40em;	margin-left: auto;	margin-right: auto;
+	overflow: auto;	/*margin-top: -10px;*/}
+/* header */
+#header img{	margin-left: 10px;
+	border: none;}
+#header hr{	display: none;}
+
+/* topbar */
+#topBar{	background-color: #deeafc;	height: 26px;}
+
+#menuBar hr{	display: none;}
+
+#menuBar ul{	list-style-type: none;	margin-left: -20px;}
+
+#menuBar ul li{	float: left;	font: menu;	font-size: 13pt;}
+
+#menuBar ul li a{	text-decoration: none;	color: #0066FF;	margin-right: 20px;
+	font-size: 13pt;}
+
+#menuBar ul li a:hover{	color: #95c2ff;}
+
+/* search area in the top bar */
+#searchBar{	text-align: right;	color: #0066FF;	font: menu;	font-size: 13pt;	margin-right: 5px;}
+
+/* to fix an IE problem */#searchBar{
+	font-size: 13pt;
+}
+
+#searchBar input{	margin-left: 5px;	margin-right: 5px;}
+
+#searchBar hr{	display: none;}
+
+/* searched object */
+.object{	font-style: italic;	font-weight: 100;	font-size: 14pt;	color: #555;}
+
+/**************
+loading in top results area
+***************/
+/*#loadingImg {
+	display:none; 
+	margin-top: 20px; 
+	margin-left:20px; 
+	margin-right:10px;
+	margin-bottom: 20 px;
+}*/
+
+
+.generalInfo{
+	font-size: 11pt;
+	color: #000;
+}
+
+
+
+/* area where results are shown */
+
+#resultsArea {	color: #0066ff;	/*font-weight: 600;*/	margin-left: 15px;}
+
+#container0{
+	color: #333;
+	/*margin-top: -12px;*/
+	font-weight:100;
+	font-size: 10pt;
+	margin-bottom: 15px;
+}
+
+#resultsArea hr{	margin-right: 15px;}
+
+.resourceDescription{	color: #333;	font-size: 12pt;}
+
+.results{	color: #333;	/*margin-top: -12px;*/	font-weight:100;	font-size: 10pt;	margin-bottom: 15px;}
+
+.results a{
+	/*position: relative;   --> for manual toolTips */
+	text-decoration: underline;
+	border: none;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.results a:hover{
+	color: #ffa826;
+}
+
+.results a img{
+	border: 2px solid #ffffff;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+/* manual tooltips
+.results a span{
+	display:none;
+}
+
+.results a:hover span{
+	display: block; position:absolute;
+    top: 0.5em; left: 0.5em; width: 15em;
+    border: 1px solid #d9d96f; background-color: #FFFF99; color:#000;
+    text-align: center;
+}
+*/
+.results a:hover img{
+	border: 2px solid #ffa826;
+}
+
+.resultTitle{	color: #0066ff;}
+
+
+
+/**********
+ area containing functionality ontology related 
+ **********/
+
+#ontologyArea{	margin-left: 15px;}
+/*
+#ontologyArea a{	text-decoration: none;	color: #0066ff;	font-weight: 600;}
+#ontologyArea a:hover{	text-decoration: underline;}*/
+
+#ontologyArea h2{	font-size: 18pt;	color: #0066ff;
+	text-decoration: none;
+	font-weight: normal;}
+
+#ontologyArea p {
+
+	
+}
+
+/**************
+loading in the Ontology Area
+***************/
+/*#loadingImgOntology {
+	display:none; 
+	margin-top: 20px; 
+	margin-left:20px; 
+	margin-right:10px;
+	margin-bottom: 20 px;
+}*/
+
+
+/**************
+Login area located inside the Ontology Area
+***************/
+
+#loginArea p{
+	font-size: 9pt;
+	color: #0066ff;
+}
+
+#loginArea input{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 3px;
+}
+
+#loginArea table tr td{
+	font-size: 9pt;
+}
+
+
+
+#loginArea hr{
+	display: none;
+}
+
+#loginArea {
+	margin-right: 15px;
+	margin-bottom: 20px;
+	float: right;
+	background-color: #deeafc;
+	border: 2px solid #ccc;
+}
+
+#loginArea form{
+	color: #666;
+}
+
+/*************************
+left part of the ontology area
+**************************/
+
+#leftPart{
+	float:left;
+	
+	/* check this instruction */
+	max-width: 60%;
+}
+
+/*************************
+area of tag mapping on the ontology
+**************************/
+
+#searchOntologyArea{
+	font-size: 14pt;
+	color: #0066ff;
+}
+
+
+/*************************
+disambiguation section
+**************************/
+#disambiContainer{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #eee;
+	border: 3px solid #bbb;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px; 	
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	font-size: 11pt;
+	color: #333;
+	text-align: left;	
+}
+
+#disambiContainer p a{
+	color: #0066ff;
+}
+
+#disambiContainer p a:hover{
+	color:#ffa826;
+}
+
+.disambiConcept{
+	list-style-type: none;
+	margin-left: -20px;
+	
+}
+
+.disambiConcept p{
+	margin-left: 5px;
+}
+
+.disambiConcept a{
+	color: #0066ff;
+	text-decoration: none;
+	font-size: 12pt;
+}
+
+.disambiConcept a:hover{
+	color: #ffa826;
+}
+
+.conceptUri{
+	color: #333;
+	font-size: 10pt; 
+}
+
+
+/*************************
+mapping and linked concepts area
+**************************/
+
+#ontologyResults{
+	font-size: 13pt;
+}
+
+
+#ontologyMappedConcept{
+	color: #0066ff;
+	border: 3px solid #FFA826;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	overflow: hidden;
+}
+
+#concept{
+	margin-left: 2px;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+
+.boxTitle{
+	margin-left: 6px;
+	margin-top: -4px;
+	color: #444;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 12pt;
+}
+
+/**************************
+related concept macro-containter
+***************************/
+
+#relatedClassesContainer{
+	margin-left: 30px;
+	margin-bottom: 20px;
+	border: 2px solid #aaa;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	overflow: auto;
+	padding: 5px;
+}
+
+.linkedOntologyConcept{
+	margin-left: 20px;
+	border: 2px solid #ccc;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	overflow: hidden;
+}
+
+.linkedOntologyConcept a{
+	text-decoration: none;
+	color: #0066ff;
+}
+
+.linkedOntologyConcept a:hover{
+	color: #ffa826;
+}
+
+.desc{
+	margin-left: 2px;
+	margin-right: 50px;
+	color: #333;
+	font-size: 9pt;
+}
+
+.rel{
+	margin-left: 2px;
+	color: #0066ff;
+	font-size: 11pt;
+}
+
+.rel a{
+	font-size: 10pt;
+}
+
+.tags{
+	margin-left: 2px;
+	margin-right: 50px;
+	margin-bottom: 20px;
+	color: #333;
+	font-size: 9pt;
+}
+
+.tags a{
+	text-decoration: none;
+	color: #0066ff;
+}
+
+.tags a:hover{
+	color: #ffa826;
+}
+
+
+.instances{
+	font-style: italic;
+	font-size: 10pt;
+	margin-left: 2px;
+	margin-right: 50px;
+	margin-bottom: 20px;
+	color: #333;
+	
+}
+
+.instances a{
+	text-decoration: none;
+	color: #660066;
+}
+
+.instances a:hover{
+	color: #ffa826;
+}
+
+/***********************
+superClasses container
+************************/
+#superClassesContainer{
+	margin-left: 30px;
+	margin-bottom: 20px;
+	border: 2px solid #999;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	overflow: auto;
+	padding: 5px;
+}
+
+/***********************
+subClasses container
+************************/
+#subClassesContainer{
+	margin-left: 30px;
+	margin-bottom: 20px;
+	border: 2px solid #777;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	overflow: auto;
+	padding: 5px;
+}
+
+/***********************
+whole ontology box, showing all ontology concept to allow personal mapping
+************************/
+
+#wholeOntology{
+	border: 2px solid #ccc;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-radius-topleft: 6px;
+	border-radius-topright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-radius-bottomleft: 6px;
+	border-radius-bottomright: 6px;
+	overflow: auto;
+}
+
+#wholeOntology table tr td{
+	padding: 10px;
+}
+
+#wholeOntology table tr td a{
+	font-size: 10pt;
+	color: #0066ff;
+}
+
+#wholeOntology table tr td a:hover{
+	color: #ffa826;
+}
+
+/***********************
+Area containing documentation in About, TechnicalInfo (and Help)
+************************/
+#infoArea{
+	font-size: 10pt;
+	color: #333;
+	text-align: left;
+	margin-right: 10px;
+	margin-left: 20px;
+}
+
+#infoArea h1{
+	color: #0066ff;
+	font-size: 12pt;
+	font-width: bold;
+}
+
+#infoArea h2{
+	color: #0066ff;
+	font-size: 11pt;
+	margin-bottom: -2px;
+}
+
+#infoArea h3{
+	color: #0066ff;
+	font-size: 10pt;
+	margin-bottom: -2px;
+}
+
+#infoArea h4{
+	color: #333;
+	font-width: bold;
+}
+
+/************************
+footer
+*************************/
+#footer{
+	font-size: 7pt;
+	color: #bbb;
+	text-align: center;
+}

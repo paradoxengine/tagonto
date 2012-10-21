@@ -1,0 +1,113 @@
+@CHARSET "UTF-8";
+
+body
+{
+	margin: 0;
+	margin-bottom: 2em;
+	padding: 1em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background: #7b7b7b;
+	font-size: 9pt; /*was 70% */
+}
+
+
+
+#pageWidth{
+	background: #fff;
+	width: 90%;
+	min-height: 40em;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	font-size: 8pt;
+	color: #000;
+	padding-left: 10px;
+}
+
+#pageWidth h1{
+	margin-left: 10px;
+	color: #0066ff;
+	font-size: 18pt;
+	font-weight: normal;
+}
+
+#desc{
+	font-size:10pt;
+	font-style:italic;
+}
+
+  
+fieldset
+{
+	
+	float: left;
+	display: block;
+	width: 30em;
+	margin: 0 1em 1em 0;
+	padding: 0 0em 0em 1em;
+	border: solid 1px #0066ff;
+}
+
+legend {
+	color: #fff;
+	/*background: #ACACAC;*/
+	background: #0066ff;
+	border: 1px solid #0066ff;
+}
+
+fieldset.radio
+{
+	width: 15em;
+	margin: 1em 0 2em 0;
+}
+
+fieldset.radio input
+{
+	clear: both;
+	float: left;
+	width: auto;
+}
+
+fieldset.radio label
+{
+	font-weight: normal;
+}
+
+input
+{
+	display: block;
+	width: 20em;
+}
+
+label
+{
+	display: block;
+	margin-bottom: 0.2em;
+}
+
+label.first
+{
+	padding-top: 4px;
+}
+
+a:hover{
+	color: #ffa826;
+}
+
+.confCreated{
+	font-size: 12pt;
+}
+
+select
+{
+	display: block;
+}
+
+/************************
+footer
+*************************/
+#footer{
+	font-size: 7pt;
+	color: #bbb;
+	text-align: center;
+}

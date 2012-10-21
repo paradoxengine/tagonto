@@ -1,0 +1,67 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background: #7b7b7b;
+}
+
+#pageWidth{
+	background: #fff;
+	width: 90%;
+	min-height: 40em;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	font-size: 13pt;
+	color: #000;
+}
+
+#pageWidth h1{
+	margin-left: 10px;
+	color: #0066ff;
+	font-size: 18pt;
+	font-weight: normal;
+}
+
+#description{
+	margin-left: 10px;
+	font-style: italic;
+}
+
+#pageWidth ul{
+	list-style-type: circle;
+}
+
+#pageWidth ul li a{
+	color: #0066ff;
+	text-decoration: none;
+	text-weight: bold;
+}
+
+#pageWidth ul li a:hover{
+	color: #ffa826;
+}
+
+
+#pageWidth form{
+	margin-left: 10px;
+}
+
+#pageWidth form input{
+	margin-top: 20px;
+}
+
+
+#pageWidth form p i{
+	font-size: 10pt;
+}
+
+
+/************************
+footer
+*************************/
+#footer{
+	font-size: 7pt;
+	color: #bbb;
+	text-align: center;
+}
