@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/antlr-2.7.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/arq-extra.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/arq.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/commons-logging-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/concurrent.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/icu4j_3_4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/iri.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/jena.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/jenatest.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/json.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/junit.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/log4j-1.2.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/lucene-core-2.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/stax-api-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/wstx-asl-3.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/xercesImpl.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Jena-2.5.3/lib/xml-apis.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-httpclient-3.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-lang-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/javax.servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jericho-html-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jwnl.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mysql-connector-java-5.0.7-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/wvtool.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/com.noelios.restlet.ext.asyncweb_0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/com.noelios.restlet.ext.httpclient_3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/com.noelios.restlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/org.apache.mina.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/org.restlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/org.safehaus.asyncweb.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/restlet-1.0.4/lib/org.slf4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/aterm-java-1.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/api-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/apibinding-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/commons-lang-2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/debugging-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/dig1_1-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/examples-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/functionalparser-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/functionalrenderer-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/impl-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/krssparser-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/log4j-1.2.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/oboparser-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/owlxmlparser-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/owlxmlrenderer-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/rdfapi-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/rdfxmlparser-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/rdfxmlrenderer-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/tutorial-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/owlapi/util-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/jetty/jetty.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/xsdlib/relaxngDatatype.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/xsdlib/xsdlib.jar"/>
+	<classpathentry kind="lib" path="lib/protege.jar"/>
+	<classpathentry kind="lib" path="lib/protege-owl.jar"/>
+	<classpathentry kind="lib" path="lib/looks-2.1.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
