@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns="http://polimi.it/tagonto/tagonto.owl#"
+	xmlns:tagont="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#"
+	xml:base="http://polimi.it/tagonto/tagonto.owl">
+	
+	<owl:Ontology rdf:about="">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			An ontology describing the concept of matching tags against concepts of an ontology.
+		</rdfs:comment>
+		<owl:imports rdf:resource="http://tagont.googlecode.com/files/tagont.owl"/>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="#Tag">
+		<owl:disjointWith rdf:resource="#Mapping"/>
+		<owl:disjointWith rdf:resource="#Mapper"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tag"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#ServiceDomain"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tagging"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="#Mapper">
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			A subject which stated a mapping.
+		</rdfs:comment>
+		
+	    <owl:disjointWith rdf:resource="#Mapping"/>
+	    <owl:disjointWith rdf:resource="#Tag"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tag"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#ServiceDomain"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tagging"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="#Mapping">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			The concept of mapping between a tag and a concept of a specific ontology.
+		</rdfs:comment>
+		
+		<owl:disjointWith rdf:resource="#Mapper"/>
+		<owl:disjointWith rdf:resource="#Tag"/>
+		<owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tagger"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tag"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#ServiceDomain"/>
+	    <owl:disjointWith rdf:resource="http://bubb.ghb.fh-furtwangen.de/TagOnt/tagont.owl#Tagging"/>
+
+		<owl:equivalentClass>		
+			<owl:class>
+				<owl:intersectionOf rdf:parseType="Collection">
+				<owl:Restriction>
+					<owl:onProperty rdf:resource="#hasSignificance"/>
+					<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+					<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+				</owl:Restriction>
+		
+				<owl:Restriction>
+					<owl:onProperty rdf:resource="#mappedBy"/>
+					<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+					<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+				</owl:Restriction>
+		
+				<owl:Restriction>
+					<owl:onProperty rdf:resource="#onTag"/>
+					<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+					<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+				</owl:Restriction>
+		
+				<owl:Restriction>
+					<owl:onProperty rdf:resource="#onConcept"/>
+					<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+					<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+				</owl:Restriction>
+				
+				</owl:intersectionOf>
+			</owl:class>
+		</owl:equivalentClass>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:ID="hasSignificance">
+		<rdfs:domain rdf:resource="#Mapping"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:ID="mappedBy">
+		<rdfs:domain rdf:resource="#Mapping"/>
+		<rdfs:range rdf:resource="#Mapper"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="onTag">
+		<rdfs:domain rdf:resource="#Mapping"/>
+		<rdfs:range rdf:resource="#Tag"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="onConcept">
+		<rdfs:domain rdf:resource="#Mapping"/>
+	</owl:ObjectProperty>
+</rdf:RDF>

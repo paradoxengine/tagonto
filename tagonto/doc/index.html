@@ -1,0 +1,200 @@
+<html>
+	<body>
+		<h1>Tagonto Java Library User Guide</h1>
+		
+		<div align="left">
+			<h2>Installation</h2>
+			<h4>Configuring the Database</h4>
+			<p>
+				Tagonto needs two databases to work efficently :
+				<ul>
+					<li> A database to cache mappings and informations about ontologies :
+						<ul>
+							<li> Create a the dabase schema <b>tagonto</b> (or choose a different name).
+							<li> Use the sql script in <a href="../config/sql/tagonto.sql">$TAGONTO_DIR$/config/sql/tagonto.sql</a>
+							<li> Create a sql user (eg. <b>tagonto</b>) and grant the necessary permissions on the schema
+						</ul>
+					</li>
+					<li> A database used by jena to store the ontology modeling the mapping system :
+						<ul>
+							<li> Create a the dabase schema <b>tagonto_model</b> (or choose a different name).
+							<li> Create a sql user (eg. <b>jena</b>) and grant the necessary permissions on the schema.
+						</ul>
+					</li>
+				</ul>				
+			</p>
+		
+			<h4>Configuring Tagonto</h4>
+			<p>
+				To configure tagonto you can modify the existing property file <a href="../config/tagonto_config.prop">$TAGONTO_DIR$/config/tagonto_config.prop</a>, or create a new one.<br>
+				It's mandatory to set to the correct values the following properties :
+				<ul>
+					<li> Tagonto database properties
+						<ul>
+							<li> <b>DATABASE_SERVER</b>
+							<li> <b>DATABASE_SCHEMA</b> : the name of the database schema you have choosen before (e.g. tagonto).
+							<li> <b>DATABASE_USER</b> : the name of the user you have choosen before that will be used by tagonto to access the db (e.g. tagonto).
+							<li> <b>DATABASE_PASS</b> : the password of the user.
+						</ul>
+					</li>
+					
+					<li> Tagonto_Model database properties
+						<ul>
+							<li> <b>RDF_CACHER_JDBC_URL</b> : the jdbc url of the tagonto model database (e.g. jdbc:mysql://localhost/tagonto_model).
+							<li> <b>RDF_CACHER_DB_USER</b> : the name of the user you have choosen before that will be used by tagonto to access the db (e.g. jena).
+							<li> <b>RDF_CACHER_DB_PASS</b> : the password of the user.
+							<li> <b>RDF_CACHER_DB_TYPE</b> : the type of the database server (e.g. mysql).
+							<li> <b>RDF_CACHER_DB_DRIVER</b> : the jdbc driver used to access the database (e.g. com.mysql.jdbc.Driver)
+							<li> <b>RDF_CACHER_TAG_ONTOLOGY_URI</b> :  the URI of the ontology describing the tagonto mapping model (e.g. $TAGONTO_DIR$/ontologies/tagonto.owl, NOT tagont.owl since that's a tag system's ontology).
+						</ul>
+					</li>
+					
+					<li> Wordnet properties
+						<ul>
+							<li> <b>WORDNET_JWNL_CONFIG_FILE</b> : the location of the wordnet properties file (e.g. $TAGONTO_DIR$/config/file_properties.xml).
+						</ul>
+					</li>
+				</ul>
+				
+				Also remember to configure the <a href="../config/file_properties.xml">wordnet properties file</a>, <b>changing the location of the wordnet database file</b>.
+				<br/>
+				<br/>
+				<b>IMPORTANT : TAGONTO WORKS ONLY WITH VERSION 2.0 OF WORDNET DB SINCE IT USES THE LIBRARY JWNL TO ACCESS THE DATABASE</b>
+			</p>
+			
+			<h2>Using Tagonto</h2>
+			<p>
+				To use tagonto you have to opportunities :
+				<ul>
+					<li>
+						Use it as a java library, importing it into your favourite project and invoking services through java code.
+					</li>
+					<li>
+						Launch the tagonto jar specifying the location of the tagonto configuration file as a parameter
+							<code>
+								java -jar $TAGONTO_JAR$ $TAGONTO_PROPERTIES_FILE$
+							</code>
+						and use the predefined http interface that is included.
+					</li>
+				</ul>
+			</p>
+			
+			<h3>The HTTP interface</h3>
+			<p>
+				The http interface included exposes some of the tagonto services through http.<br>
+				The default configuration of the web server hosting that interface responds on the <b>port 9000</b>.<br>
+				Following there is a description of the services exposed.
+				
+				<h4>Ontologies Loading</h4>
+				<a name="services_load_by_uri"/>
+					<h5>Invocation</h5>
+					<p>
+						Prior to starting to map a tag, tagonto needs to load the ontology containing the concepts onto which the
+						tag will be mapped. To instruct tagonto to do so, use the service located at :
+						<a href="http://localhost:9000/ontologies/getbyuri">http://localhost:9000/ontologies/getbyuri</a>.
+						<br/>
+						The service must be invoked using the <b>HTTP POST method</b> with the following paramenters :
+						<ul>
+							<li> <b>URI</b> : the uri of the ontology (e.g. http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine)
+						</ul>
+						An example invoker can be found at <a href="test_ontologies_get_by_uri.html">$TAGONTO_DIR$/doc/test_ontologies_get_by_uri.html</a>
+					</p>
+					
+					<h5>Response</h5>
+					<p>
+						The response of the server is always an xml document with the following syntax :
+						<blockquote>
+						&lt;tagonto requestSatisfied=&quot;true&quot;&gt;
+							<blockquote>						
+							&lt;ontology&gt;
+								<blockquote>
+								&lt;Uri&gt; http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine &lt;/Uri&gt;</br>
+								&lt;id&gt; 34 &lt;/id&gt;
+								</blockquote>
+							&lt;/ontology&gt;
+							</blockquote>
+						&lt;/tagonto&gt;
+						</blockquote>
+						
+						In case of error while satisfying the request, the syntax will be <a href="#error-sintax">error sintax</a>
+					</p>
+				
+				<h4>Ontologies Info retrieving</h4>
+				<h5>Invocation</h5>
+					<p>
+						To retrieve informations about an ontology loaded into tagonto invoke the service located at :
+						<a href="http://localhost:9000/ontologies/1">http://localhost:9000/ontologies/$ONTOLOGY_ID$</a>
+						where you have to substitute $ONTOLOGY_ID$ with the id retrieved using the <a href="#services_load_by_uri">load ontology by uri service</a>
+						<br/>
+						The service can be invoked using the <b>ANY HTTP method</b>.						
+					</p>
+					
+					<h5>Response</h5>
+					<p>
+						The response of the server is always an xml document with the following syntax :
+						<blockquote>
+						&lt;tagonto requestSatisfied=&quot;true&quot;&gt;
+							<blockquote>						
+							&lt;ontology&gt;
+								<blockquote>
+								&lt;Uri&gt; http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine &lt;/Uri&gt;</br>
+								&lt;id&gt; 34 &lt;/id&gt;
+								</blockquote>
+							&lt;/ontology&gt;
+							</blockquote>
+						&lt;/tagonto&gt;
+						</blockquote>
+						
+						In case of error while satisfying the request, the syntax will be <a href="#error-sintax">error sintax</a>
+					</p>
+					
+				<h4>Mapping a tag</h4>
+				<h5>Invocation</h5>
+					<p>
+						To map a tag on a concept of a specific ontology invoke the service located at :
+						<a href="http://localhost:9000/ontologies/1/">http://localhost:9000/ontologies/$ONTOLOGY_ID$/map</a>.
+						where you have to substitute $ONTOLOGY_ID$ with the id retrieved using the <a href="#services_load_by_uri">load ontology by uri service</a>
+						<br/>
+						The service must be invoked using the <b>HTTP POST method</b> with the following paramenters :
+						<ul>
+							<li> <b>tag</b> : the tag to be matcher (e.g. "climbing" or "Heinz Mariacher")
+							<li> <b>userId</b> : the id of the user requesting the mapping (e.g. 1 or 271828)
+							<li> <b>doGreedyMatch</b> : if the match should be done using a greedy algorithm or not (e.g. true or false)
+						</ul>
+						An example invoker can be found at <a href="test_mapping.html">$TAGONTO_DIR$/doc/test_mapping.html</a>						
+					</p>
+					
+					<h5>Response</h5>
+					<p>
+						The response of the server is always an xml document with the following syntax :
+						<blockquote>
+						&lt;tagonto requestSatisfied=&quot;true&quot;&gt;
+							<blockquote>
+							&lt;mappings ontologyId=&quot;34&quot; ontologyUri=&quot;http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine&quot;&gt;
+								<blockquote>
+								&lt;mapping concept=&quot;Wine&quot; conceptUri=&quot;http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#Wine&quot; significance=&quot;0.8&quot; tag=&quot;wine&quot;/&gt;<br/>
+								&lt;mapping concept=&quot;Wine&quot; conceptUri=&quot;http://www.w3.org/TR/2003/CR-owl-guide-20030818/food#Wine&quot; significance=&quot;0.8&quot; tag=&quot;wine&quot;/&gt;<br/>
+								</blockquote>
+							&lt;/mappings&gt;
+							</blockquote>
+						&lt;/tagonto&gt;
+						</blockquote>
+						In case of error while satisfying the request, the syntax will be <a href="#error-sintax">error sintax</a>
+					</p>
+				
+				<h4>Error Response</h4>
+				<a name="error-sintax">
+					<p>
+						In case of error while satisfying the request, the syntax of the response xml document will be :
+						<blockquote>
+						&lt;tagonto requestSatisfied=&quot;false&quot;&gt;
+							<blockquote>
+							&lt;exception type=&quot;java.lang.Exception&quot;&gt;Missing one or more fields in request.&lt;/exception&gt;
+							</blockquote>
+						&lt;/tagonto&gt;
+						</blockquote>
+					</p>
+			</p>
+		</div>
+	</body>
+</html>
